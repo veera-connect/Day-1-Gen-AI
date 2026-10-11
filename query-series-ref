@@ -145,3 +145,388 @@ GPT = AI model.
 OpenAI API = A way to use OpenAI models in your own applications.
 
 You can build your own ChatGPT-like application using an OpenAI model, adding only the tools and features your application needs.
+
+
+
+
+
+
+
+# DAY 1: INTRODUCTION TO CHATGPT, LLMs & AI APPLICATIONS
+
+## 1. What Is ChatGPT?
+
+ChatGPT is an AI application developed by OpenAI. It provides a conversational interface powered by AI models, including models from the GPT family.
+
+We can use ChatGPT to:
+
+* Ask questions and get explanations.
+* Generate and explain code.
+* Write emails and documents.
+* Learn new concepts.
+* Analyze supported files and data.
+* Perform certain tasks using available tools.
+
+### Example
+
+We ask ChatGPT:
+
+**User:** Explain Generative AI in simple words.
+
+**ChatGPT:** Generative AI is a type of artificial intelligence that can generate new content, such as text, images, audio, and code.
+
+### Understand the difference
+
+| Term      | Meaning                                                               |
+| --------- | --------------------------------------------------------------------- |
+| ChatGPT   | An AI application that provides a conversational interface            |
+| LLM       | A Large Language Model that understands and generates language        |
+| GPT       | A family of AI models developed by OpenAI                             |
+| API       | A way for one software application to communicate with another        |
+| LangChain | A framework for connecting LLMs with prompts, tools, and data sources |
+
+**Important:** ChatGPT is an application, whereas GPT models are AI models that can power applications.
+
+---
+
+## 2. Can We Simply Give Employees Access to ChatGPT?
+
+Imagine a company wants to build an AI assistant for its employees.
+
+Employees need to:
+
+* Ask questions about company policies.
+* Retrieve information from internal documents.
+* Check customer details.
+* Access business databases.
+* Generate reports.
+* Perform approved business operations.
+
+Can we simply give everyone access to ChatGPT and finish the project?
+
+**Answer: Not necessarily.**
+
+ChatGPT may help with general questions and supported tasks. However, a company-specific solution may require custom integrations, permissions, business rules, workflows, and a dedicated user interface.
+
+For example, a company employee might ask:
+
+> "How many sales did our South region generate yesterday?"
+
+To answer accurately, the application needs authorized access to the company's sales data.
+
+The model's general training does not automatically provide access to that private database.
+
+Therefore, we may build our own AI application using an existing LLM.
+
+---
+
+## 3. Can We Build Our Own Application Using an Existing LLM?
+
+**Yes! We do not necessarily need to train our own AI model.**
+
+We can use an existing model through an API and build an application around it.
+
+For example, we can use an OpenAI model through the OpenAI API.
+
+Our application can combine the model with:
+
+* A frontend.
+* A backend.
+* Company documents.
+* Databases and APIs.
+* Tools and workflows.
+* Safety controls and permissions.
+
+### High-Level Architecture
+
+```text
+                👤 USERS
+                    |
+                    v
+             🖥️ FRONTEND
+          Chat Interface / UI
+                    |
+                    v
+             ⚙️ BACKEND
+       Application Logic / API Calls
+                    |
+                    v
+             🧠 EXISTING LLM
+             Accessed Through API
+                    |
+          +---------+---------+
+          |         |         |
+          v         v         v
+         RAG      TOOLS     MEMORY
+          |         |         |
+          v         v         v
+       Documents  DB / APIs  Context
+          |         |         |
+          +---------+---------+
+                    |
+                    v
+             🛡️ SAFETY CHECKS
+                    |
+                    v
+              ✅ RESPONSE
+```
+
+**Note:** This is a conceptual architecture. In a real application, the backend or agent orchestrates the LLM, retrieval, tools, and safety checks. The LLM does not automatically gain access to these capabilities.
+
+---
+
+## 4. Main Components of an AI Application
+
+| Component              | Purpose                                       | College AI Assistant Example                               |
+| ---------------------- | --------------------------------------------- | ---------------------------------------------------------- |
+| Frontend               | Provides the user interface                   | Website where students ask questions                       |
+| Backend                | Manages requests and application logic        | Receives questions and calls the required services         |
+| LLM                    | Understands prompts and generates responses   | Explains the syllabus                                      |
+| RAG                    | Retrieves relevant information from documents | Finds syllabus topics in PDFs                              |
+| Tools                  | Allow the application to perform operations   | Check attendance or query a database                       |
+| Memory                 | Maintains relevant conversation context       | Remembers the current conversation                         |
+| Agent                  | Coordinates multi-step tasks when needed      | Retrieves syllabus details and then checks class schedules |
+| Safety and permissions | Controls access and helps manage risks        | Prevents unauthorized access to student records            |
+| Infrastructure         | Runs the application and supporting services  | Cloud server, hosting, and monitoring                      |
+
+Not every AI application needs every component. Start with the simplest architecture that meets the requirements.
+
+---
+
+## 5. Do We Need to Use the Same Model That Powers ChatGPT?
+
+**No. We can choose a model based on our application's requirements.**
+
+Different approaches are available.
+
+| Approach              | What We Do                                                 | Example                        |
+| --------------------- | ---------------------------------------------------------- | ------------------------------ |
+| OpenAI API            | Call an OpenAI model through an API                        | GPT-4.1-mini                   |
+| Other model providers | Use models through their APIs                              | Models from other AI providers |
+| Open-source models    | Run a model ourselves or use a compatible hosting provider | Llama or Qwen                  |
+
+### Important distinction
+
+When we use the OpenAI API, we do not automatically receive the entire ChatGPT application.
+
+We receive access to supported API capabilities and build our own application around them.
+
+Similarly, running an open-source model does not automatically provide ChatGPT's interface, integrations, or infrastructure.
+
+The model available through an API may also differ from the model or configuration currently used in the ChatGPT product.
+
+---
+
+## 6. College AI Assistant: Our First Use Case
+
+Let's build an AI assistant for a college.
+
+### Business requirements
+
+The college wants an assistant that can:
+
+1. Answer questions about the syllabus.
+2. Retrieve information from PDF documents.
+3. Query the student database.
+4. Check attendance.
+5. Generate student performance reports.
+
+We do not need to train a new LLM from scratch to build this application.
+
+We can connect an existing model to the relevant information sources and tools.
+
+### Example question
+
+**Student asks:**
+
+"What is the syllabus for Generative AI, and how many classes are allocated to RAG?"
+
+Suppose the syllabus document states that RAG is allocated four classes.
+
+The application retrieves the relevant syllabus content and provides it to the LLM, which generates an answer.
+
+**Expected answer:**
+
+"According to the syllabus, RAG is allocated four classes."
+
+The answer must be based on the actual syllabus document rather than an unsupported guess.
+
+### Architecture
+
+```text
+             👤 STUDENT
+                  |
+                  v
+          🖥️ COLLEGE WEBSITE
+                  |
+                  v
+             ⚙️ BACKEND
+                  |
+                  v
+             🧠 LLM API
+                  |
+                  v
+          📚 RETRIEVE SYLLABUS
+                  |
+                  v
+           📄 SYLLABUS PDF
+                  |
+                  v
+        RELEVANT CONTENT RETRIEVED
+                  |
+                  v
+             🧠 LLM
+                  |
+                  v
+             ✅ ANSWER
+```
+
+In a RAG implementation, the syllabus would typically be processed and indexed in advance. At question time, the application retrieves relevant passages and supplies them to the model as context.
+
+---
+
+## 7. Step 1: Connect to an LLM
+
+Before adding RAG, tools, or agents, let's connect our application to an existing model.
+
+### Install the required packages
+
+```bash
+pip install langchain-openai
+```
+
+### Configure your API key
+
+Set your OpenAI API key in an environment variable named `OPENAI_API_KEY`. Obtain the key through your OpenAI developer account.
+
+Do not hardcode API keys in notebooks, source code, or public repositories.
+
+### Python example
+
+```python
+from langchain_openai import ChatOpenAI
+
+llm = ChatOpenAI(
+    model="gpt-4.1-mini",
+    temperature=0
+)
+
+response = llm.invoke(
+    "Explain Generative AI in simple words."
+)
+
+print(response.content)
+```
+
+### What happens in this code?
+
+```text
+Your Python Application
+          |
+          v
+       LangChain
+          |
+          v
+       OpenAI API
+          |
+          v
+    GPT-4.1-mini
+          |
+          v
+       Response
+```
+
+**Explanation:**
+
+* `ChatOpenAI`: Connects LangChain to an OpenAI chat model.
+* `model="gpt-4.1-mini"`: Selects the model.
+* `temperature=0`: Requests relatively consistent, less variable responses.
+* `llm.invoke()`: Sends the prompt to the model.
+* `response.content`: Retrieves the generated text.
+
+At this stage, we have connected an LLM to our application. We have not yet implemented RAG, database access, or an agent.
+
+---
+
+## 8. Step 2: How Do We Connect AI to Different Systems?
+
+Our college assistant may need access to:
+
+* Student databases.
+* Attendance systems.
+* Internal documents.
+* Timetables.
+* Student performance reports.
+* External applications.
+
+The LLM does not automatically have permission or connectivity to these systems.
+
+We must provide the appropriate integrations.
+
+### Example: Checking attendance
+
+A student asks:
+
+"What is my attendance percentage?"
+
+The application must authenticate the student, retrieve the authorized attendance records, and calculate or retrieve the correct percentage.
+
+```text
+Student asks a question
+          |
+          v
+    Application
+          |
+          v
+ Verify identity and permissions
+          |
+          v
+ Attendance Tool / API
+          |
+          v
+ Attendance Database
+          |
+          v
+ Retrieve authorized records
+          |
+          v
+ Calculate attendance
+          |
+          v
+    LLM generates
+    a clear response
+          |
+          v
+       Student
+```
+
+The database connection and permission checks are application responsibilities. The LLM should not be given unrestricted access to private student records.
+
+---
+
+## 9. What Will We Learn Next?
+
+We will build the college assistant incrementally.
+
+| Day / Stage | Topic                              | What We Will Build                                       |
+| ----------- | ---------------------------------- | -------------------------------------------------------- |
+| Day 1       | ChatGPT, LLMs, and AI applications | Connect to an existing LLM                               |
+| Day 2       | Prompts and model parameters       | Improve the quality and consistency of responses         |
+| Day 3       | Embeddings and vector databases    | Understand how documents can be indexed for retrieval    |
+| Day 4       | RAG                                | Answer questions using syllabus PDFs                     |
+| Day 5       | Tool calling                       | Connect the assistant to an approved database or API     |
+| Day 6       | Agents and workflows               | Coordinate multiple steps to solve a task                |
+| Day 7       | Memory, safety, and evaluation     | Improve context handling, security, and response quality |
+
+## Day 1: Final Takeaway
+
+Remember these five points:
+
+1. **ChatGPT is an AI application; GPT is a family of AI models.**
+2. **We can use an existing LLM through an API to build our own application.**
+3. **We do not need to train an LLM from scratch for every business use case.**
+4. **RAG provides relevant document information, while tools connect the application to external systems and perform operations.**
+5. **Our application must manage permissions, integrations, workflows, and safety.**
+
+The goal is not to rebuild ChatGPT from scratch. The goal is to use existing AI models to solve a specific business problem.
+
