@@ -1,0 +1,41 @@
+LEVEL 1 — LLM FUNDAMENTALS
+        │
+        ├── What is LLM?
+        ├── Tokenization
+        ├── Token IDs
+        ├── Embeddings
+        ├── Transformer
+        ├── Attention
+        ├── Next-token prediction
+        ├── Temperature / Top-K / Top-P
+        └── Hallucination
+                 ↓
+LEVEL 2 — GENAI APPLICATIONS
+        │
+        ├── Prompt Engineering
+        ├── Context Window
+        ├── Embeddings
+        ├── Vector Database
+        ├── Semantic Search
+        ├── RAG
+        └── Fine-tuning
+                 ↓
+LEVEL 3 — AGENTIC AI
+        │
+        ├── Tools
+        ├── Function Calling
+        ├── Planning
+        ├── Reasoning
+        ├── Memory
+        ├── Agents
+        └── Multi-Agent Systems
+                 ↓
+LEVEL 4 — PRODUCTION / FDE
+        │
+        ├── Guardrails
+        ├── Security
+        ├── Evaluation
+        ├── Observability
+        ├── Cost / Token Optimization
+        ├── Latency
+        └── Deployment
