@@ -1,0 +1,367 @@
+LEVEL 0 — AI & GENERATIVE AI BASICS
+
+Before jumping into LLMs, students should understand the big picture.
+
+├── What is AI?
+├── AI vs Machine Learning
+├── Machine Learning vs Deep Learning
+├── What is Generative AI?
+├── Traditional AI vs Generative AI
+├── Generative AI use cases
+├── Foundation Models
+├── LLMs
+├── Multimodal AI
+└── GenAI ecosystem
+Simple hierarchy
+AI
+ │
+ ├── Machine Learning
+ │      │
+ │      └── Deep Learning
+ │
+ └── Generative AI
+        │
+        ├── LLM
+        ├── Image Models
+        ├── Audio Models
+        └── Multimodal Models
+🔵 LEVEL 1 — LLM FUNDAMENTALS 🧠
+
+This is where students understand what is happening inside an LLM.
+
+├── What is an LLM?
+├── How LLMs are trained — high level
+├── Training data
+├── Pre-training
+├── Tokens
+├── Tokenization
+├── Token IDs
+├── Vocabulary
+├── Embeddings
+├── Vector representation
+├── Positional information
+├── Transformer architecture
+├── Attention
+├── Self-Attention
+├── Context Window
+├── Next-Token Prediction
+├── Logits / probabilities
+├── Temperature
+├── Top-K
+├── Top-P
+├── Model Parameters
+├── Inference
+└── Hallucination
+Student should be able to explain:
+Text
+ ↓
+Tokenizer
+ ↓
+Token IDs
+ ↓
+Embeddings
+ ↓
+Transformer
+ ↓
+Attention
+ ↓
+Probability
+ ↓
+Next Token
+ ↓
+Repeat
+ ↓
+Response
+
+This is the "How does ChatGPT work?" level.
+
+🟡 LEVEL 2 — GENAI APPLICATION DEVELOPMENT 🚀
+
+Now move from:
+
+"How does the LLM work?"
+
+to:
+
+"How do I build an application using an LLM?"
+
+├── LLM APIs
+├── Model selection
+├── Prompt Engineering
+├── System Prompt
+├── User Prompt
+├── Few-shot prompting
+├── Structured prompts
+├── Context management
+├── Context Window management
+├── Streaming responses
+├── Embedding Models
+├── Vector representations
+├── Cosine Similarity
+├── Semantic Search
+├── Vector Databases
+│
+├── RAG
+│   ├── Document ingestion
+│   ├── Document loading
+│   ├── Chunking
+│   ├── Embedding
+│   ├── Vector storage
+│   ├── Retrieval
+│   ├── Context injection
+│   └── Generation
+│
+├── RAG evaluation
+└── Fine-tuning
+RAG flow
+Documents
+    ↓
+Chunking
+    ↓
+Embeddings
+    ↓
+Vector DB
+    ↓
+User Question
+    ↓
+Semantic Search
+    ↓
+Relevant Chunks
+    ↓
+LLM
+    ↓
+Answer
+🟠 LEVEL 2.5 — MULTIMODAL GENAI 🖼️🎤
+
+Keep this as a smaller module.
+
+├── Text → Text
+├── Image → Text
+├── Text → Image
+├── Image → Image
+├── Audio → Text
+├── Text → Audio
+├── Video understanding
+├── Vision + LLM
+└── Multimodal applications
+
+Example:
+
+Image
+ ↓
+Vision Model
+ ↓
+LLM
+ ↓
+"Describe this image"
+🔴 LEVEL 3 — AGENTIC AI 🤖
+
+Now students move from answering questions to performing tasks.
+
+├── What is an AI Agent?
+├── LLM vs AI Agent
+├── Tools
+├── Tool Calling
+├── Function Calling
+├── API integration
+├── Database tools
+├── Search tools
+├── Calculator / utility tools
+├── Planning
+├── Reasoning
+├── Agent Loop
+├── Tool Selection
+├── Observation
+├── Decision Making
+├── Memory
+├── Short-term Memory
+├── Long-term Memory
+├── Workflow / Orchestration
+├── Agents
+└── Multi-Agent Systems
+Agent loop
+             USER GOAL
+                 ↓
+              🧠 LLM
+                 ↓
+              PLAN
+                 ↓
+          CHOOSE A TOOL
+                 ↓
+          🔧 EXECUTE TOOL
+                 ↓
+             RESULT
+                 ↓
+          🧠 OBSERVE
+                 ↓
+          Need another action?
+             ↙       ↘
+           YES        NO
+            ↓          ↓
+       Choose tool   FINAL ANSWER
+            │
+            └──────→ Repeat
+
+This is where students really understand Agentic AI.
+
+🟣 LEVEL 4 — PRODUCTION GENAI 🏗️
+
+This is where you move from:
+
+"It works on my laptop."
+
+to:
+
+"It works reliably for thousands of users."
+
+├── GenAI Application Architecture
+├── Model Selection
+├── Model Routing
+├── API Management
+├── Security
+├── Authentication
+├── Authorization
+├── Data Privacy
+├── PII protection
+├── Prompt Injection
+├── Guardrails
+├── Input validation
+├── Output validation
+│
+├── Evaluation
+│   ├── Accuracy
+│   ├── Relevance
+│   ├── Faithfulness
+│   ├── Hallucination
+│   └── RAG evaluation
+│
+├── Observability
+│   ├── Logs
+│   ├── Metrics
+│   ├── Traces
+│   └── LLM monitoring
+│
+├── Cost Optimization
+├── Token Optimization
+├── Latency Optimization
+├── Caching
+├── Scalability
+├── Rate Limiting
+├── Error Handling
+├── Retry mechanisms
+├── Model fallback
+├── Deployment
+└── Monitoring
+🟤 LEVEL 5 — FDE / ENTERPRISE AI ENGINEERING 🚀
+
+This is where your Forward Deployed Engineer concept becomes very powerful.
+
+Students learn:
+
+Business Problem
+      ↓
+Understand Existing System
+      ↓
+Identify Gap
+      ↓
+Design AI Solution
+      ↓
+Integrate Existing Systems
+      ↓
+Build Prototype
+      ↓
+Evaluate
+      ↓
+Deploy
+      ↓
+Monitor
+      ↓
+Improve
+FDE skills
+├── Requirement Understanding
+├── Business Problem Discovery
+├── Existing System Analysis
+├── Solution Architecture
+├── AI Use-Case Identification
+├── Build vs Buy
+├── Model Selection
+├── RAG Architecture
+├── Agent Architecture
+├── API Integration
+├── Database Integration
+├── Cloud Integration
+├── Security
+├── Evaluation
+├── Observability
+├── Cost Analysis
+├── Performance Optimization
+├── Production Deployment
+├── Customer Feedback
+└── Iterative Improvement
+☁️ LEVEL 6 — CLOUD + DEVOPS FOR GENAI
+
+Since you're also teaching Cloud DevOps, this is valuable for FDE students.
+
+├── Docker
+├── Kubernetes — basics
+├── Cloud Services
+├── Compute
+├── Storage
+├── Databases
+├── API Gateway
+├── Secrets Management
+├── CI/CD
+├── Infrastructure as Code
+├── Monitoring
+├── Logging
+├── Autoscaling
+├── Load Balancing
+├── Model/API deployment
+└── GenAI production infrastructure
+🛡️ LEVEL 7 — RESPONSIBLE & SECURE AI
+
+Keep this as a dedicated topic.
+
+├── AI Safety
+├── Responsible AI
+├── Data Privacy
+├── PII
+├── Access Control
+├── Prompt Injection
+├── Jailbreaks
+├── Data Leakage
+├── Toxicity / unsafe output
+├── Content filtering
+├── Guardrails
+├── Auditability
+└── Human-in-the-loop
+🎯 FINAL STUDENT JOURNEY
+
+The whole syllabus can be summarized as:
+
+LEVEL 0
+AI / GenAI BASICS
+       ↓
+LEVEL 1
+UNDERSTAND THE LLM
+       ↓
+LEVEL 2
+BUILD GENAI APPLICATIONS
+       ↓
+LEVEL 2.5
+MULTIMODAL AI
+       ↓
+LEVEL 3
+BUILD AI AGENTS
+       ↓
+LEVEL 4
+PRODUCTION GENAI
+       ↓
+LEVEL 5
+FDE / ENTERPRISE AI
+       ↓
+LEVEL 6
+CLOUD + DEVOPS
+       ↓
+LEVEL 7
+SECURE + RESPONSIBLE AI
